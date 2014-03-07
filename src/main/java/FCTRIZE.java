@@ -1,12 +1,7 @@
 import java.io.IOException;
 
-/**
- * Created with IntelliJ IDEA.
- * User: praveen
- * Date: 7/3/14
- * Time: 7:57 PM
- * Solves the problem http://www.codechef.com/CDGF2013/problems/FCTRIZE/.
- */
+// Solves the problem http://www.codechef.com/CDGF2013/problems/FCTRIZE/.
+
 public class FCTRIZE {
     static int GCD_ROUTINE_LABEL = 0;
     static int GCD_ROUTINE_EXIT_LABEL = 1;
@@ -31,7 +26,7 @@ public class FCTRIZE {
         WhiteSpaceCoder whiteSpaceCoder = new WhiteSpaceCoder();
 
         whiteSpaceCoder.push(2);
-        whiteSpaceCoder.goto_(INIT_LOOP_LABEL);
+        whiteSpaceCoder.GoTo(INIT_LOOP_LABEL);
         whiteSpaceCoder.addLabel(PRINT_LOOP_LABEL);
         whiteSpaceCoder.pushAndPrint(',');
         whiteSpaceCoder.addLabel(INIT_LOOP_LABEL);
@@ -52,7 +47,7 @@ public class FCTRIZE {
         whiteSpaceCoder.subtract();
 
         whiteSpaceCoder.if0goto(EXIT_LABEL);
-        whiteSpaceCoder.goto_(PRINT_LOOP_LABEL);
+        whiteSpaceCoder.GoTo(PRINT_LOOP_LABEL);
 
         whiteSpaceCoder.addLabel(SOLVE_ROUTINE_LABEL);
         whiteSpaceCoder.addToHeap(SOLVE_OUTPUT_HEAP_LOC, 0);
@@ -63,7 +58,7 @@ public class FCTRIZE {
         whiteSpaceCoder.swap();
         whiteSpaceCoder.modulo();
         whiteSpaceCoder.if0goto(DIVIDES_LABEL);
-        whiteSpaceCoder.goto_(LOOP_INCR_LABEL);
+        whiteSpaceCoder.GoTo(LOOP_INCR_LABEL);
 
         whiteSpaceCoder.addLabel(DIVIDES_LABEL);
         whiteSpaceCoder.duplicate();
@@ -75,7 +70,7 @@ public class FCTRIZE {
         whiteSpaceCoder.addToHeap(GCD_INPUT2_HEAP_LOC);
         whiteSpaceCoder.callSubRoutine(GCD_ROUTINE_LABEL);
         whiteSpaceCoder.if0goto(GCD_ISZERO_LABEL);
-        whiteSpaceCoder.goto_(LOOP_INCR_LABEL);
+        whiteSpaceCoder.GoTo(LOOP_INCR_LABEL);
 
         whiteSpaceCoder.addLabel(GCD_ISZERO_LABEL);
         whiteSpaceCoder.incrementHeapLoc(SOLVE_OUTPUT_HEAP_LOC);
@@ -88,7 +83,7 @@ public class FCTRIZE {
         whiteSpaceCoder.swap();
         whiteSpaceCoder.subtract();
         whiteSpaceCoder.ifIsNegativeGoTo(SOLVE_EXIT_LABEL);
-        whiteSpaceCoder.goto_(SOLVE_LOOP_LABEL);
+        whiteSpaceCoder.GoTo(SOLVE_LOOP_LABEL);
         whiteSpaceCoder.addLabel(SOLVE_EXIT_LABEL);
         whiteSpaceCoder.pop();
         whiteSpaceCoder.endSubRoutine();
@@ -104,7 +99,7 @@ public class FCTRIZE {
         whiteSpaceCoder.getFromHeap(GCD_INPUT2_HEAP_LOC);
         whiteSpaceCoder.addToHeap(GCD_INPUT1_HEAP_LOC);
         whiteSpaceCoder.addToHeap(GCD_INPUT2_HEAP_LOC);
-        whiteSpaceCoder.goto_(GCD_ROUTINE_START_LABEL);
+        whiteSpaceCoder.GoTo(GCD_ROUTINE_START_LABEL);
 
         whiteSpaceCoder.addLabel(GCD_ROUTINE_EXIT_LABEL);
         whiteSpaceCoder.pop();
@@ -115,6 +110,6 @@ public class FCTRIZE {
         whiteSpaceCoder.addLabel(EXIT_LABEL);
         whiteSpaceCoder.end();
 
-        whiteSpaceCoder.writeToFile("/home/praveen/coding/gcd.ws");
+        whiteSpaceCoder.writeToFile("factorize.ws");
     }
 }
