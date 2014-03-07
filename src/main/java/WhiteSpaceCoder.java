@@ -1,3 +1,8 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Stack;
+
 public class WhiteSpaceCoder {
     private StringBuilder wsCode;
     private static char space = 32;
